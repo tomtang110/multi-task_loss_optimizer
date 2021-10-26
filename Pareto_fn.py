@@ -67,7 +67,7 @@ def pareto_fn(w_list, c_list, model, config,loss_list):
 
     grads = np.concatenate(grads,axis=0).reshape(config.num_tasks,-1)
     weights = np.mat([[w] for w in w_list])
-    c_mat = np.mat([[c]] for c in c_list)
+    c_mat = np.mat([[c] for c in c_list])
     new_w_list = pareto_step(weights, c_mat, grads)
 
     return new_w_list
